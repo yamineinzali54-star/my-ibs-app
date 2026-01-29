@@ -1,0 +1,15 @@
+{
+  "short_name": "YaminIBS",
+  "name": "Yamin's IBS Assistant",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FFB6C1",
+  "background_color": "#ffffff"
+}
