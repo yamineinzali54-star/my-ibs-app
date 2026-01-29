@@ -19,9 +19,7 @@ st.markdown(f'<link rel="manifest" href="manifest.json">', unsafe_allow_html=Tru
 # --- ၂။ CSS STYLING (အပြင် App ပုံစံပေါက်အောင် တစ်ခါတည်း စုရေးထားပါတယ်) ---
 st.markdown("""
     <style>
-    /* Streamlit default header/footer ဖျောက်ခြင်း */
-    header {visibility: hidden;}
-    footer {visibility: hidden;}
+    
     
     .stApp { background-color: #fdf2f8; }
     [data-testid="stSidebar"] { background-color: #FFF0F5 !important; border-right: 2px solid #FFC0CB; }
