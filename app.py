@@ -6,6 +6,18 @@ from io import BytesIO
 from PIL import Image
 import random
 
+# ၁။ Browser Tab မှာ Logo ပေါ်အောင် လုပ်နည်း
+st.set_page_config(
+    page_title="Yamin's IBS Assistant", 
+    page_icon="logo.png", # ဒီနေရာမှာ Yamin ရဲ့ logo ဖိုင်နာမည် ရေးပေးပါ
+    layout="wide"
+)
+
+# ၂။ Sidebar (ဘေးဘား) ရဲ့ အပေါ်ဆုံးမှာ Logo ပြနည်း
+with st.sidebar:
+    st.image("logo.png", width=250) # Logo ပုံကို အပေါ်ဆုံးမှာ ပြပါမယ်
+
+    # ... ကျန်တဲ့ Code များ ...
 # 1. Page Config
 st.set_page_config(page_title="IBS Personal Assistant", page_icon="🎀", layout="wide")
 
@@ -38,8 +50,8 @@ st.markdown("""
         font-weight: bold;
     }
     
-    .water-card { background-color: #E0F7FA; padding: 15px; border-radius: 15px; border: 1px solid #4DD0E1; text-align: center; color: #00838F; font-weight: bold; }
-    .tip-box { background-color: #FFF9C4; padding: 10px; border-radius: 10px; border-left: 5px solid #FBC02D; color: #7F0000; font-size: 14px; margin-bottom: 20px; }
+    .water-card { background-color: #E0F7FA; padding: 15px; border-radius: 15px; border: 1px solid #4DD0E1; text-align: center; color: #00838F; font-weight: bold; margin:20px; }
+    .tip-box { background-color: #FFF9C4; padding: 10px; border-radius: 10px; border-left: 5px solid #FBC02D; color: #7F0000; font-size: 14px; margin-bottom:20px; text-align: center; }
     </style>
     """, unsafe_allow_html=True)
 
@@ -98,11 +110,11 @@ with tab1:
         food = st.text_input("What did you eat?", placeholder="e.g. Spicy Noodle, Milk", key=f"f_{current_user}")
         
         # 2. မတည့်တာပါရင် ချက်ချင်း သတိပေးမယ်
-        bad_foods = ["အစပ်", "ဆီကြော်", "နို့", "ကော်ဖီ", "လက်ဖက်", "အချဉ်", "ကြက်သွန်ဖြူ", "မုန့်ဟင်းခါး","အုန်းနို့ခေါက်ဆွဲ","လက်ဖက်ရည်","ကြက်သွန်နီ"]
+        bad_foods = ["အစပ်", "ဆီကြော်", "နို့", "ကော်ဖီ", "လက်ဖက်", "အချဉ်", "ကြက်သွန်ဖြူ", "မုန့်ဟင်းခါး","အုန်းနို့ခေါက်ဆွဲ","လက်ဖက်ရည်","ကြက်သွန်နီ","ပေါင်မုန့်","ကိတ်မုန့်"]
         is_risky = False
         if food:
             if any(x in food.lower() for x in bad_foods):
-                st.markdown(f'<div class="danger-alert">❌ သတိ! "{food}" က Yamin ဗိုက်နဲ့ မတည့်ဘူးနော်။ ဗိုက်အောင့်နိုင်လို့ ဆင်ခြင်ပါ!</div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="danger-alert">❌ သတိ! "{food}" က {current_user} ဗိုက်နဲ့ မတည့်ဘူးနော်။ ဗိုက်အောင့်နိုင်လို့ ဆင်ခြင်ပါ!</div>', unsafe_allow_html=True)
                 is_risky = True
             else:
                 st.success(f"✅ '{food}' က စားလို့ရနိုင်တဲ့ အစာဖြစ်ပုံရပါတယ်။")
