@@ -6,6 +6,40 @@ from io import BytesIO
 from PIL import Image
 import random
 
+import streamlit as st
+
+import streamlit as st
+
+# ⚠️ ဒီအပိုင်းက app.py ရဲ့ ထိပ်ဆုံးမှာ ရှိရပါမယ် (import ပြီးတာနဲ့ ရေးပါ)
+st.set_page_config(
+    page_title="Yamin's IBS Care",     # Streamlit အစား ဒီနာမည်ပေါ်လာမယ်
+    page_icon="🌸",                    # Logo အစား ဒီ Icon လေး (သို့) ကိုယ့်ပုံပေါ်လာမယ်
+    layout="wide"
+)
+
+st.markdown("""
+    <style>
+    /* တစ်ခုလုံးရဲ့ Background ကို ပြောင်းတာ */
+    .stApp {
+        background-color: #fdf2f8; /* ပန်းရောင်နုနုလေး */
+    }
+    
+    /* စာလုံး Style ပြောင်းတာ */
+    html, body, [class*="css"]  {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* ကတ်ပြားလေးတွေလို ပေါ်ချင်ရင် */
+    div[data-testid="stMetricValue"] {
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+
 # ၁။ Browser Tab မှာ Logo ပေါ်အောင် လုပ်နည်း
 st.set_page_config(
     page_title="Yamin's IBS Assistant", 
@@ -49,7 +83,7 @@ st.markdown("""
         margin-bottom: 15px;
         font-weight: bold;
     }
-    
+
     .water-card { background-color: #E0F7FA; padding: 15px; border-radius: 15px; border: 1px solid #4DD0E1; text-align: center; color: #00838F; font-weight: bold; margin:20px; }
     .tip-box { background-color: #FFF9C4; padding: 10px; border-radius: 10px; border-left: 5px solid #FBC02D; color: #7F0000; font-size: 14px; margin-bottom:20px; text-align: center; }
     </style>
