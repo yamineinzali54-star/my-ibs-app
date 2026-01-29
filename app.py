@@ -15,7 +15,10 @@ st.set_page_config(
 )
 
 # အရင်စာကြောင်းနေရာမှာ ဒါလေး အစားထိုးကြည့်ပါ
-st.markdown(f'<link rel="manifest" href="manifest.json?v=1">', unsafe_allow_html=True)
+# manifest.json ကို ရှာရလွယ်အောင် static link နဲ့ ချိတ်ကြည့်တာပါ
+st.markdown("""
+    <link rel="manifest" href="./manifest.json">
+""", unsafe_allow_html=True)
 
 # --- ၂။ CSS STYLING (အပြင် App ပုံစံပေါက်အောင် တစ်ခါတည်း စုရေးထားပါတယ်) ---
 st.markdown("""
